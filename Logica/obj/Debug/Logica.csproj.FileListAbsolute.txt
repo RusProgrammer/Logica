@@ -6,3 +6,5 @@ C:\Users\1\Documents\Visual Studio 2012\Projects\Logica\Logica\bin\Debug\Logica.
 C:\Users\1\Documents\Visual Studio 2012\Projects\Logica\Logica\bin\Debug\Logica.pdb
 C:\Users\1\Documents\Visual Studio 2012\Projects\Logica\Logica\obj\Debug\Logica.exe
 C:\Users\1\Documents\Visual Studio 2012\Projects\Logica\Logica\obj\Debug\Logica.pdb
+C:\Users\1\Documents\Visual Studio 2012\Projects\Logica\Logica\obj\Debug\Logica.Form1.resources
+C:\Users\1\Documents\Visual Studio 2012\Projects\Logica\Logica\obj\Debug\Logica.Parameter_adder.resources

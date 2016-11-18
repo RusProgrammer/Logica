@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Logica
 {
-    class Signal
+    public class Signal
     {
         public string Name;
         public Form1.TYPE Type;
