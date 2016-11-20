@@ -53,7 +53,7 @@
             this.добавитьСигналToolStripMenuItem,
             this.редактироватьToolStripMenuItem});
             this.Tree_Context.Name = "Tree_Context";
-            this.Tree_Context.Size = new System.Drawing.Size(183, 70);
+            this.Tree_Context.Size = new System.Drawing.Size(183, 92);
             // 
             // добавитьПараметрToolStripMenuItem
             // 
@@ -67,6 +67,7 @@
             this.добавитьСигналToolStripMenuItem.Name = "добавитьСигналToolStripMenuItem";
             this.добавитьСигналToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.добавитьСигналToolStripMenuItem.Text = "Добавить сигнал";
+            this.добавитьСигналToolStripMenuItem.Click += new System.EventHandler(this.добавитьСигналToolStripMenuItem_Click);
             // 
             // редактироватьToolStripMenuItem
             // 

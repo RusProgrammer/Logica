@@ -31,8 +31,7 @@ namespace Logica
         }
 
         private void добавитьПараметрToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-                     
+        {                     
             if (Parameters_Browser.SelectedNode == null)
             {
                 Parameter_adder Add_Wnd = new Parameter_adder();
@@ -71,6 +70,34 @@ namespace Logica
             }
         }
 
+        private void добавитьСигналToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Parameters_Browser.SelectedNode == null)
+            {
+                
+            }
+            else
+            {
+                var Finder = Check_field_type(Parameter_Pool, Parameters_Browser.SelectedNode.Text);
+                if (Finder == false)
+                {
+                    Signal_adder Add_Wnd = new Signal_adder();
+                    Add_Wnd.ShowDialog();
+                    TreeNode Node_To_Add = new TreeNode(Add_Wnd.INSERT_SIGNAL.Name);
+                    Node_To_Add.Text = Add_Wnd.INSERT_SIGNAL.Name;
+
+                    Parameters_Browser.BeginUpdate();
+                    Parameters_Browser.SelectedNode.Nodes.Add(Node_To_Add);
+                    Parameters_Browser.EndUpdate();
+
+                    var Param_Node = Parameter_Pool.Find(x => x.Name == Parameters_Browser.SelectedNode.Text);
+                    if (Param_Node.Signals == null)
+                        Param_Node.Signals = new List<Signal>();
+                    Param_Node.Signals.Add(Add_Wnd.INSERT_SIGNAL);
+                }
+            }
+        }
+
         private bool Check_field_type(List <Parameter> paramss, string srch)
         {
             bool RetVal = false;
@@ -79,6 +106,16 @@ namespace Logica
                 if (pp.Expr == srch)
                 {
                     return true;
+                }
+                if (pp.Signals != null)
+                {
+                    foreach (var _sign in pp.Signals)
+                    {
+                        if (_sign.Name == srch)
+                        {
+                            return true;
+                        }
+                    }
                 }
                 if (pp.Parameters!=null)
                 {
@@ -99,6 +136,8 @@ namespace Logica
                 Parameters_Browser.SelectedNode = null;
             }
         }
+
+
 
 
     }
